@@ -14,6 +14,9 @@
       <!-- 投稿したメッセージ内容を記述する -->
       <%= message.content %>
     </div>
+    <% if message.image.attached? && message.image.variable? %>
+  <%= image_tag message.image.variant(resize: "500x500").processed, class: "message-image" %>
+<% end %>
+
   </div>
 </div>
-解説
